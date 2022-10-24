@@ -82,10 +82,8 @@ $library['books'][3] = [
     'publishDate' => '1488',
 ];
 
-foreach($library as $category => $catalog) {
-    foreach($catalog as $link => $info) {
-        var_dump('Книга ' . $library['books'][$link]['title'] . ', её написал ' . $library['authors'][$library['books'][$link]['author']]['name'] . ' ' . $library['authors'][$library['books'][$link]['author']]['birthDate'] . '(' . $library['books'][$link]['author'] . ').');
-    }
+foreach($library['books'] as $link => $info) {
+    var_dump('Книга ' . $info['title'] . ', её написал ' . $library['authors'][$info['author']]['name'] . ' ' . $library['authors'][$info['author']]['birthDate'] . '(' . $info['author'] . ').');
 }
 
 ?>
