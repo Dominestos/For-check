@@ -131,7 +131,7 @@ var_dump($buildings["LIVING_HOUSE"]["NAME"]);
 // создайте переменную $animal и поместите в нее имя одного любого животного из названий животных
 // используйте имя на английском языке, т.е. один из ключей массива $animals
 // Выведите описание животного, на который указывает значение переменной $animal
-$animal = 'HORSE';
-var_dump($animal, $animals["HORSE"]);
+$animal = $animals["HORSE"];
+var_dump($animal["DESCRIPTION"]);
 ?>
 </pre>
