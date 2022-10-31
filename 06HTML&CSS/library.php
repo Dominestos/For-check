@@ -60,8 +60,8 @@ $tf = $red ? 'red' : 'black';
 <h1 class="<?= $tf?>"><?php echo $title;?></h1>
 <div>Авторов на портале <?php echo count($library['authors']);?></div>
 <?php foreach ($library['books'] as $link => $info) {
-    $class = $link % 2 == 0 ? 'class="grey"' : '';?>
-    <p<?= " $class"?>><?= "Книга "?><b><?= '"' . $info['title'] . '" ,'?></b><?= " её написал " . $library['authors'][$info['author']]['name'] . " " . $library['authors'][$info['author']]['birthYear'] . " " . " ("?><a href="#"><?=$info['author']?></a><?=").";?></p>
+    $class = $link % 2 == 0 ? "grey" : '';?>
+    <p class="<?=$class?>"><?= "Книга "?><b><?= '"' . $info['title'] . '" ,'?></b><?= " её написал " . $library['authors'][$info['author']]['name'] . " " . $library['authors'][$info['author']]['birthYear'] . " " . " ("?><a href="#"><?=$info['author']?></a><?=").";?></p>
 <?php } ?>
 
 </body>
