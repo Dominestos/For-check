@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/07module/app/core.php';
+require_once __DIR__ . '/app/core.php';
 
 ?>
 <!doctype html>
@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/07module/app/core.php';
 
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/07module/templates/navigation.php'
+include __DIR__ . '/templates/navigation.php'
 
 ?>
 
@@ -23,10 +23,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/07module/templates/navigation.php'
 
 <?php
 
-if($isAuthorized = true) {
-    include $_SERVER['DOCUMENT_ROOT'] . '/07module/templates/task_2_welcome_message.php';
-}elseif ($isAuthorized = false){
-    include $_SERVER['DOCUMENT_ROOT'] . '/07module/templates/task_2_auth_form.php';
+if($isAuthorized === true) {
+    include __DIR__ . '/templates/task_2_welcome_message.php';
+}else{
+    include __DIR__ . '/templates/task_2_auth_form.php';
 }
 // Разместите здесь решение задачи
 
