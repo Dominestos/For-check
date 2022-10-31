@@ -32,23 +32,8 @@ foreach($library['authors'] as $link => $info) {
         $library['authors'][$info['email']] = $info;
         unset($library['authors'][$link]);
 }
-/*
-foreach($library as $category => $catalog) {
-    foreach($catalog as $link => $info) {
-        switch ($category) {
-            case 'authors':                                    //$category === 'authors';
-                $library['authors'][$info['email']] = $info;
-                break;
-            case 'books':                                      //$category === 'books';
-                $library['books'][$info['author']] = $info;
-                break;
-        }
-        unset($library[$category][$link]);
-    }
-}*/
 
-foreach($library as $category => $catalog) {
-    foreach($catalog as $link => $info) {
+foreach($library['authors'] as $link => $info) {
         switch($link) {
             case 'john_makkormik@example.com':
                 $library['authors'][$link]['birthDate'] = '1969';
@@ -56,17 +41,20 @@ foreach($library as $category => $catalog) {
             case 'martin_robert@example.com';
                 $library['authors'][$link]['birthDate'] = '1952';
                 break;
-            case '0':
-                $library['books'][$link]['publishDate'] = '2021';
-                break;
-            case '1':
-                $library['books'][$link]['publishDate'] = '2014';
-                break;
-            case '2':
-                $library['books'][$link]['publishDate'] = '2019';
-                break;
-
         }
+}
+
+foreach($library['books'] as $link => $info) {
+    switch($link) {
+        case '0':
+            $library['books'][$link]['publishDate'] = '2021';
+            break;
+        case '1':
+            $library['books'][$link]['publishDate'] = '2014';
+            break;
+        case '2':
+            $library['books'][$link]['publishDate'] = '2019';
+            break;
     }
 }
 
@@ -85,6 +73,7 @@ $library['books'][3] = [
 foreach($library['books'] as $link => $info) {
     var_dump('Книга ' . $info['title'] . ', её написал ' . $library['authors'][$info['author']]['name'] . ' ' . $library['authors'][$info['author']]['birthDate'] . '(' . $info['author'] . ').');
 }
-
+var_dump($library);
 ?>
+
 </pre>
