@@ -19,5 +19,5 @@ function arraySort(array $array, $key = 'sort',$sort = SORT_ASC): array
     array_multisort($secondArr, $sort, $array);
 
     return $array;
-
+//comment:)
 }
